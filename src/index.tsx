@@ -1,9 +1,12 @@
-import { h, render, Fragment } from 'preact';
+import { h, render } from 'preact';
+
+import { Header, Main } from './components';
 
 const App = () => (
-  <Fragment>
-    <h1>Hello from Preact and Typescript!</h1>
-  </Fragment>
+  <div>
+    <Header />
+    <Main />
+  </div>
 );
 
 render(<App />, document.getElementById('app')!);
