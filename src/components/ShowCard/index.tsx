@@ -52,8 +52,11 @@ const ShowCard = ({
           Rating: <strong>{rating}</strong>
         </span>
         <span>Set One: {setOne.join(', ')}</span>
-        <span>Set Two: {setTwo.join(', ')}</span>
-        <span>Encore: {encore.join(', ')}</span>
+        {!setTwo ? null : <span>Set Two: {setTwo.join(', ')}</span>}
+        {/* {
+          !setThree ? null : <span>Set Three: {setThree.join(', ')}</span>
+        } */}
+        {!encore ? null : <span>Encore: {encore.join(', ')}</span>}
         <span>
           <a href={phishNetURL} target="_blank">
             LINK
