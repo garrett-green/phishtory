@@ -15,7 +15,6 @@ console.log('phishtoryEndpoint', phishtoryEndpoint);
 const url = !process.env.DEV
   ? phishtoryEndpoint
   : `https://cors-anywhere.herokuapp.com/${phishtoryEndpoint}`;
-console.log('url', url);
 
 const date = new Date();
 const today = date.getDate();
@@ -41,7 +40,6 @@ export function useFetchPhishtory({
       } else {
         try {
           const { data } = await axios.post<Show[]>(url, { day, month });
-          console.log('data', data);
           setLoading(false);
           window.sessionStorage.setItem(storageKey, JSON.stringify(data));
           setData(data);
@@ -53,6 +51,8 @@ export function useFetchPhishtory({
 
     getPhishtory();
   }, [storageKey]);
+
+  console.dir(data);
 
   return { loading, data, error };
 }

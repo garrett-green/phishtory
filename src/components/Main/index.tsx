@@ -1,24 +1,37 @@
-import { h } from 'preact';
+import { h, Fragment } from 'preact';
 import { useFetchPhishtory } from '../../hooks/useFetchPhishtory';
+import ShowCard from '../ShowCard';
 // import { useState } from 'preact/hooks';
 
-// const today = new Date();
+/* const [month, setMonth] = useState<number>(today.getMonth());
+const [day, setDay] = useState<number>(today.getDate()); */
 
 const Main = () => {
-  /* const [month, setMonth] = useState<number>(today.getMonth());
-  const [day, setDay] = useState<number>(today.getDate()); */
-
   const { loading, data, error } = useFetchPhishtory({});
-  console.log('Main -> loading', loading);
-  console.log('Main -> data', data);
+  console.log('Main -> error', error);
+
+  if (loading || data.length < 1) {
+    return <div>Still waiting...</div>;
+  }
+
+  /*
+  style={{
+          display: 'flex',
+          flexGrow: 1,
+          flexWrap: 'wrap',
+          justifyContent: 'space-evenly',
+          alignContent: 'stretch',
+        }}
+  */
 
   return (
-    <div>
-      <p>Month: month</p>
-      <p>Day: day</p>
-      {/* <p>Month: {month}</p>
-      <p>Day: {day}</p> */}
-    </div>
+    <main>
+      <div class="flex-grid">
+        {data.map((show, idx) => (
+          <ShowCard show={show} key={idx} />
+        ))}
+      </div>
+    </main>
   );
 };
 

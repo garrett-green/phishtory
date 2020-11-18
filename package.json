@@ -3,6 +3,7 @@
   "author": "@garrettgreen",
   "dependencies": {
     "axios": "^0.21.0",
+    "components": "^0.1.0",
     "preact": "^10.5.5"
   },
   "devDependencies": {
@@ -18,7 +19,7 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html",
-    "clean": "rm dist/*; m .cache/*",
+    "clean": "rm dist/*",
     "dev": "yarn run clean; yarn run build && yarn run start",
     "start": "parcel src/index.html"
   },

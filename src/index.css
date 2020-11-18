@@ -1,0 +1,86 @@
+.body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+             'Segoe UI', Roboto, 'Helvetica Neue', 
+             Ubuntu, Arial, sans-serif;
+  height: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+}
+
+/* #app {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px){
+  #app {
+   -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  #app > * {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  #app > div {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #app {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+} */
+
+hr {
+  width: 90%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0.5vh 0.5vw;
+}
+
+.card {
+  flex: 1;
+  background-color: lightcoral;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5vh 0.5vw;
+  padding: 1%;
+}
+
+.card div {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.card span {
+  width: 90%;
+  padding: 1.25% 2.5%; 
+}
+
+.card h3 {
+  text-align: center;
+}
+
+.card hr {
+  width: 90%;
+  overflow: hidden;
+  text-align: center;
+}
+
+@media (max-width: 1025px) {
+  .flex-grid {
+    display: block;
+  }
+}
