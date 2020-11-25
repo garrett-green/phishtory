@@ -7,10 +7,7 @@ interface FetchPhishtory {
   month?: string;
 }
 
-console.log('process.env.DEV', process.env.DEV);
-
 const phishtoryEndpoint = process.env.PHISHTORY_ENDPOINT!;
-console.log('phishtoryEndpoint', phishtoryEndpoint);
 
 const url = !process.env.DEV
   ? phishtoryEndpoint
@@ -51,8 +48,6 @@ export function useFetchPhishtory({
 
     getPhishtory();
   }, [storageKey]);
-
-  console.dir(data);
 
   return { loading, data, error };
 }

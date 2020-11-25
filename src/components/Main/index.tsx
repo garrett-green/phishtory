@@ -1,28 +1,17 @@
-import { h, Fragment } from 'preact';
+import { h } from 'preact';
 import { useFetchPhishtory } from '../../hooks/useFetchPhishtory';
 import ShowCard from '../ShowCard';
-// import { useState } from 'preact/hooks';
-
-/* const [month, setMonth] = useState<number>(today.getMonth());
-const [day, setDay] = useState<number>(today.getDate()); */
 
 const Main = () => {
   const { loading, data, error } = useFetchPhishtory({});
-  console.log('Main -> error', error);
 
-  if (loading || data.length < 1) {
-    return <div>Still waiting...</div>;
+  if (error || data.length < 1) {
+    window.location.reload();
   }
 
-  /*
-  style={{
-          display: 'flex',
-          flexGrow: 1,
-          flexWrap: 'wrap',
-          justifyContent: 'space-evenly',
-          alignContent: 'stretch',
-        }}
-  */
+  if (loading) {
+    return <div>Still waiting...</div>;
+  }
 
   return (
     <main>
