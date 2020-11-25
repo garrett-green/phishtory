@@ -79,7 +79,7 @@ hr {
   }
   .card {
     align-self: center;
-    margin: 0.5vh 1vw;
+    margin: 1vh 1vw;
     max-width: 95%;
   }
 }
