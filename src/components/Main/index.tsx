@@ -5,12 +5,12 @@ import ShowCard from '../ShowCard';
 const Main = () => {
   const { loading, data, error } = useFetchPhishtory({});
 
-  if (error || data.length < 1) {
-    window.location.reload();
-  }
-
   if (loading) {
     return <div>Still waiting...</div>;
+  }
+
+  if (error) {
+    window.location.reload();
   }
 
   return (
