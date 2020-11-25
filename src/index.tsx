@@ -1,8 +1,11 @@
 import { h, render, Fragment } from 'preact';
+import { Header, Main } from './components';
+import './index.css';
 
 const App = () => (
   <Fragment>
-    <h1>Hello from Preact and Typescript!</h1>
+    <Header />
+    <Main />
   </Fragment>
 );
 

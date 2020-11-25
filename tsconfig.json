@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": "src",
     "esModuleInterop": true,
     "jsx": "react",
     "jsxFactory": "h",
@@ -8,6 +9,9 @@
     "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "./dist",
+    "paths": {
+      "@local": ["local"]
+    },
     "sourceMap": true,
     "strict": true,
     "target": "ES5"
