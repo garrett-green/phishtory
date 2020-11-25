@@ -18,7 +18,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.html",
+    "build": "parcel build dist/index.html",
     "clean": "rm dist/*",
     "dev": "yarn run clean; yarn run build && yarn run start",
     "start": "parcel src/index.html"
