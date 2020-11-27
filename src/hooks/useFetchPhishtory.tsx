@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'preact/hooks';
 
 interface FetchPhishtory {
-  day?: string;
-  month?: string;
+  day?: number;
+  month?: number;
 }
 
 const url = process.env.PHISHTORY_ENDPOINT!;
@@ -14,8 +14,8 @@ const today = date.getDate();
 const thisMonth = date.getMonth() + 1;
 
 export function useFetchPhishtory({
-  day = today.toString(),
-  month = thisMonth.toString(),
+  day = today,
+  month = thisMonth,
 }: FetchPhishtory) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<Show[]>([]);
