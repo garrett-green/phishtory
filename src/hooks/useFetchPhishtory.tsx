@@ -7,9 +7,7 @@ interface FetchPhishtory {
   month?: string;
 }
 
-const phishtoryEndpoint = process.env.PHISHTORY_ENDPOINT!;
-
-const url = `https://cors-anywhere.herokuapp.com/${phishtoryEndpoint}`;
+const url = process.env.PHISHTORY_ENDPOINT!;
 
 const date = new Date();
 const today = date.getDate();
