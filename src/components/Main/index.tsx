@@ -1,15 +1,18 @@
 import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import { useFetchPhishtory } from '../../hooks/useFetchPhishtory';
 import ShowCard from '../ShowCard';
 
 const Main = () => {
   const { loading, data, error } = useFetchPhishtory({});
+  const [retried, setRetryStatus] = useState<boolean>(false);
 
   if (loading) {
     return <div>Still waiting...</div>;
   }
 
-  if (error) {
+  if (error && !retried) {
+    setRetryStatus(true);
     window.location.reload();
   }
 
