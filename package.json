@@ -2,7 +2,7 @@
   "name": "preact-template",
   "author": "@garrettgreen",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "components": "^0.1.0",
     "preact": "^10.5.5"
   },
